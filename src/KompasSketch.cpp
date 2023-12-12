@@ -87,11 +87,11 @@ void KompasSketch::drawPinHole(double bodyHeight, double pinHoleDiameter)
 
 void KompasSketch::drawPistonSkirt(double bodyWidth)
 {	
-	_createSketch();
-
 	const double xPos = bodyWidth / 2;
 	constexpr double heightSkirt = -5;
 	constexpr double widthSkirt = 8;
+
+	_createSketch();
 
 	_document2D = _sketchDefinition->BeginEdit();
 

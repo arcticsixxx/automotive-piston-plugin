@@ -60,9 +60,12 @@ void KompasWrapper::createDocument()
 
 void KompasWrapper::buildBody(double bodyHeight, double bottomDiameter, double pistonHeadHeight, int ringsCount)
 {
+	_createPart();
+
 	if (!_kompasPart)
 	{
-		_createPart();
+		qDebug() << "[KompasWrapper::buildBody] !part";
+		return;
 	}
 
 	_kompasSketch = std::shared_ptr<KompasSketch>(new KompasSketch(_kompasPart));
@@ -73,9 +76,12 @@ void KompasWrapper::buildBody(double bodyHeight, double bottomDiameter, double p
 
 void KompasWrapper::extrudePinHole(double bodyHeight, double pinHoleDiameter)
 {
+	_createPart();
+
 	if (!_kompasPart)
 	{
-		_createPart();
+		qDebug() << "[KompasWrapper::extrudePinHole] !part";
+		return;
 	}
 
 	_kompasSketch->drawPinHole(bodyHeight, pinHoleDiameter);
@@ -85,9 +91,12 @@ void KompasWrapper::extrudePinHole(double bodyHeight, double pinHoleDiameter)
 
 void KompasWrapper::extrudePistonSkirt(double bottomDiameter)
 {
+	_createPart();
+
 	if (!_kompasPart)
 	{
-		_createPart();
+		qDebug() << "[KompasWrapper::buildPistonSkirt] !part";
+		return;
 	}
 
 	_kompasSketch->drawPistonSkirt(bottomDiameter);
@@ -97,9 +106,12 @@ void KompasWrapper::extrudePistonSkirt(double bottomDiameter)
 
 void KompasWrapper::changeMaterial(MaterialType mType)
 {
+	_createPart();
+
 	if (!_kompasPart)
 	{
-		_createPart();
+		qDebug() << "[KompasWrapper::changeMaterial] !part";
+		return;
 	}
 
 	switch (mType)
