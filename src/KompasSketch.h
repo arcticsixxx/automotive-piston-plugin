@@ -1,9 +1,10 @@
 #pragma once
 
 #include "kAPI5.tlh"
-
+// TODO: не используется
 #include <memory>
 
+// TODO: вынести в отдельный файл
 enum LineType
 {
 	Auxillary = 0,
@@ -16,6 +17,7 @@ enum LineType
 class KompasSketch
 {
 public:
+	// TODO: добавить комментарий для всех элементов всех классов, перечислений и т.д.
 	explicit KompasSketch(Kompas6API5::ksPartPtr part);
 
 public:

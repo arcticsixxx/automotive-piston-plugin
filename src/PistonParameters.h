@@ -10,6 +10,7 @@ enum ParameterType
     PistonHeadHeight,
     PistonBottomDiameter,
     PistonPinHoleDiameter,
+    // TODO: комментарий установить над нужной строке
     RingsCount,                  // EngineType
 };
 
