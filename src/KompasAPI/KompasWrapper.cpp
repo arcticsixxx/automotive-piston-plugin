@@ -8,7 +8,7 @@
 
 #include <atlbase.h>
 
-#include "ksConstants3D.tlh"
+#include "Common/ksConstants3D.tlh"
 
 KompasWrapper::KompasWrapper()
 {

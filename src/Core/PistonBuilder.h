@@ -2,7 +2,7 @@
 
 #include <memory>
 
-#include "KompasWrapper.h"
+#include "KompasAPI/KompasWrapper.h"
 
 class PistonParameters;
 

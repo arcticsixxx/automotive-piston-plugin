@@ -5,9 +5,9 @@
 #include <QToolTip>
 #include <QMessageBox>
 
-#include "PistonParameters.h"
-#include "PistonBuilder.h"
-#include "Validator.h"
+#include "Core/PistonParameters.h"
+#include "Core/PistonBuilder.h"
+#include "Core/Validator.h"
 
 #include <exception>
 

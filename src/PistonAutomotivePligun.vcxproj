@@ -22,6 +22,7 @@
     <WindowsTargetPlatformVersion Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">10.0.22621.0</WindowsTargetPlatformVersion>
     <WindowsTargetPlatformVersion Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">10.0.22621.0</WindowsTargetPlatformVersion>
     <QtMsBuild Condition="'$(QtMsBuild)'=='' OR !Exists('$(QtMsBuild)\qt.targets')">$(MSBuildProjectDirectory)\QtMsBuild</QtMsBuild>
+    <ProjectName>PistonAutomotivePlugin</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="Configuration">
@@ -62,12 +63,14 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
     <CodeAnalysisRuleSet>NativeRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <PublicIncludeDirectories>$(ProjectDir);$(PublicIncludeDirectories)</PublicIncludeDirectories>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
       <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalIncludeDirectories>$(ProjectDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="Configuration">
@@ -95,25 +98,32 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="KompasSketch.cpp" />
-    <ClCompile Include="KompasWrapper.cpp" />
-    <ClCompile Include="PistonBuilder.cpp" />
-    <ClCompile Include="PistonParameters.cpp" />
-    <ClCompile Include="Validator.cpp" />
-    <QtRcc Include="images.qrc" />
-    <QtUic Include="mainwindow.ui" />
-    <ClCompile Include="MainWindow.cpp" />
-    <ClCompile Include="Parameter.cpp" />
+    <ClCompile Include="Core\Parameter.cpp" />
+    <ClCompile Include="Core\PistonBuilder.cpp" />
+    <ClCompile Include="Core\PistonParameters.cpp" />
+    <ClCompile Include="Core\Validator.cpp" />
+    <ClCompile Include="KompasAPI\KompasSketch.cpp" />
+    <ClCompile Include="KompasAPI\KompasWrapper.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="UI\MainWindow.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="KompasSketch.h" />
-    <ClInclude Include="KompasWrapper.h" />
-    <ClInclude Include="Parameter.h" />
-    <ClInclude Include="PistonBuilder.h" />
-    <ClInclude Include="Validator.h" />
-    <QtMoc Include="MainWindow.h" />
-    <ClInclude Include="PistonParameters.h" />
+    <ClInclude Include="Core\Parameter.h" />
+    <ClInclude Include="Core\PistonBuilder.h" />
+    <ClInclude Include="Core\PistonParameters.h" />
+    <ClInclude Include="Core\Validator.h" />
+    <ClInclude Include="KompasAPI\KompasSketch.h" />
+    <ClInclude Include="KompasAPI\KompasWrapper.h" />
+    <QtMoc Include="UI\MainWindow.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtRcc Include="UI\images.qrc" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="UI\mainwindow.ui" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="UI\pistonsketch.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">

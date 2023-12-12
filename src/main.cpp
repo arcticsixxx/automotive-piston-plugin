@@ -1,4 +1,4 @@
-#include "MainWindow.h"
+#include "UI/MainWindow.h"
 
 #include <QApplication>
 // TODO: не хватает комментариев    +
