@@ -223,7 +223,5 @@ void MainWindow::_checkDependentField(QLineEdit* lineEdit, ParameterType pType)
     {
         lineEdit->setStyleSheet(_uiColor.noErrorColor);
     }
-
-
 }
 

@@ -5,15 +5,15 @@
 PistonParameters::PistonParameters()
 {
     _parameters.insert(ParameterType::PistonHeight,
-                        Parameter(55, 50, 65));
+        Parameter(55, 50, 65));
     _parameters.insert(ParameterType::PistonHeadHeight,
-                        Parameter(16, 13.75, 17.6));
+        Parameter(16, 13.75, 17.6));
     _parameters.insert(ParameterType::PistonBottomDiameter,
-                        Parameter(100, 92, 106));
+        Parameter(100, 92, 106));
     _parameters.insert(ParameterType::PistonPinHoleDiameter,
-                        Parameter(18, 16, 22));
+        Parameter(18, 16, 22));
     _parameters.insert(ParameterType::RingsCount,
-                        Parameter(2, 2, 3)); 
+        Parameter(2, 2, 3)); 
 }
 
 double PistonParameters::getValue(ParameterType key) const

@@ -1,8 +1,7 @@
 #include "KompasSketch.h"
 
 #include "ksConstants3D.tlh"
-// TODO: Íå èñïîëüçóåòñÿ include
-#include "ksConstants.tlh"
+// TODO: Íå èñïîëüçóåòñÿ include +
 
 KompasSketch::KompasSketch(Kompas6API5::ksPartPtr part) :
     _part(part)
@@ -35,8 +34,8 @@ void KompasSketch::_drawRings(double& x, double& y, double pistonHeadHeight, int
 	{
 		_document2D->ksPoint(x, y, LineType::Auxillary);
 		_document2D->ksPoint(x, y + ringHeigth, LineType::Auxillary);
-		_document2D->ksPoint(x + 1, y + ringHeigth, LineType::Auxillary);
-		_document2D->ksPoint(x+ 1, y + (2 * ringHeigth), LineType::Auxillary);
+		_document2D->ksPoint(x + ringDepth, y + ringHeigth, LineType::Auxillary);
+		_document2D->ksPoint(x + ringDepth, y + (2 * ringHeigth), LineType::Auxillary);
 
 		y += 2 * ringHeigth;
 	}
@@ -49,17 +48,17 @@ void KompasSketch::drawBody(double bodyHeight, double bodyWidth, double pistonHe
 
 	_document2D = _sketchDefinition->BeginEdit();
 
-	// ÎÑÜ ÂÐÀÙÅÍÈß
+	// axes of rotation
 	_document2D->ksLineSeg(0, 0, 0, bodyHeight, LineType::RotationAxes);
 	
-	// ÎÒÐÈÑÎÂÊÀ ÊÎËÅÖ
+	// draws rings of piston
 	_document2D->ksPolyline(LineType::Main);
 	
 	_document2D->ksPoint(0, bodyHeight, LineType::Main);
 	_document2D->ksPoint(bodyWidth, bodyHeight, LineType::Main);
 	_drawRings(bodyWidth, bodyHeight, pistonHeadHeight, ringsCount);
 
-	// ÎÒÐÈÑÎÂÊÀ ÎÑÒÀÂØÅÉÑß ×ÀÑÒÈ ÏÎÐØÍß
+	// remaining part of piston
 	_document2D->ksPoint(bodyWidth, bodyHeight, LineType::Main);
 	_document2D->ksPoint(bodyWidth, 0, LineType::Main);
 	_document2D->ksPoint(0, 0, LineType::Main);
@@ -72,12 +71,16 @@ void KompasSketch::drawBody(double bodyHeight, double bodyWidth, double pistonHe
 void KompasSketch::drawPinHole(double bodyHeight, double pinHoleDiameter)
 {
 	bodyHeight = (-1) * bodyHeight;
-	
+
+	constexpr double pinHolePosX = 0;
+	const double pinHolePosY = 0.4f * bodyHeight;
+
 	_createSketch();
 
 	_document2D = _sketchDefinition->BeginEdit();
 	
-	_document2D->ksCircle(0, (0.4f) * bodyHeight, pinHoleDiameter / 2, 1);
+	_document2D->ksCircle(pinHolePosX, pinHolePosY,
+		pinHoleDiameter / 2, LineType::Main);
 
 	_sketchDefinition->EndEdit();
 }

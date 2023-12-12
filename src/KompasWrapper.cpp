@@ -60,12 +60,9 @@ void KompasWrapper::createDocument()
 
 void KompasWrapper::buildBody(double bodyHeight, double bottomDiameter, double pistonHeadHeight, int ringsCount)
 {
-	_createPart();
-
 	if (!_kompasPart)
 	{
-		qDebug() << "[KompasWrapper::buildBody] !part";
-		return;
+		_createPart();
 	}
 
 	_kompasSketch = std::shared_ptr<KompasSketch>(new KompasSketch(_kompasPart));
@@ -76,12 +73,9 @@ void KompasWrapper::buildBody(double bodyHeight, double bottomDiameter, double p
 
 void KompasWrapper::extrudePinHole(double bodyHeight, double pinHoleDiameter)
 {
-	_createPart();
-
 	if (!_kompasPart)
 	{
-		qDebug() << "[KompasWrapper::extrudePinHole] !part";
-		return;
+		_createPart();
 	}
 
 	_kompasSketch->drawPinHole(bodyHeight, pinHoleDiameter);
@@ -91,12 +85,9 @@ void KompasWrapper::extrudePinHole(double bodyHeight, double pinHoleDiameter)
 
 void KompasWrapper::extrudePistonSkirt(double bottomDiameter)
 {
-	_createPart();
-
 	if (!_kompasPart)
 	{
-		qDebug() << "[KompasWrapper::buildPistonSkirt] !part";
-		return;
+		_createPart();
 	}
 
 	_kompasSketch->drawPistonSkirt(bottomDiameter);
@@ -119,6 +110,8 @@ void KompasWrapper::changeMaterial(MaterialType mType)
 	case 1:
 		_kompasPart->SetMaterial(L"ÀÄ0 ÃÎÑÒ 4784-2019", 2.71f);
 		break;
+	default:
+		break;
 	}
 
 	_kompasPart->Update();
@@ -138,7 +131,7 @@ void KompasWrapper::_rotateEntity()
 
 	if (!rotateDef)
 	{
-		qDebug() << "!entityRotate";
+		qDebug() << "!rotateDef";
 		return;
 	}
 
@@ -146,7 +139,7 @@ void KompasWrapper::_rotateEntity()
 
 	if (!rotproperty)
 	{
-		qDebug() << "!roproperty";
+		qDebug() << "!rotproperty";
 		return;
 	}
 
