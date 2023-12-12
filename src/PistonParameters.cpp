@@ -48,12 +48,12 @@ void PistonParameters::_updateParametersExtremums(ParameterType key, double valu
     switch (key)
     {
     case ParameterType::PistonHeight:
-        _parameters[PistonHeadHeight].setMinValue(value * minPistonHeadScaling);
-        _parameters[PistonHeadHeight].setMaxValue(value * maxPistonHeadScaling);
+        _parameters[PistonHeadHeight].setMinValue(round(value * minPistonHeadScaling * 10.0) / 10.0);
+        _parameters[PistonHeadHeight].setMaxValue(round(value * maxPistonHeadScaling * 10.0) / 10.0);
         break;
     case ParameterType::PistonBottomDiameter:
-        _parameters[PistonPinHoleDiameter].setMinValue(value * minPinHoleScaling);
-        _parameters[PistonPinHoleDiameter].setMaxValue(value * maxPinHoleScaling);
+        _parameters[PistonPinHoleDiameter].setMinValue(round(value * minPinHoleScaling * 10.0) / 10.0);
+        _parameters[PistonPinHoleDiameter].setMaxValue(round(value * maxPinHoleScaling * 10.0) / 10.0);
         break;
     default:
         return;
