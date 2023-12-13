@@ -1,6 +1,6 @@
 #pragma once
 
-#include <QMap>
+#include <map>
 
 #include "Parameter.h"
 
@@ -55,5 +55,5 @@ private:
 
 private:
     // Map collection of params
-    QMap<ParameterType, Parameter> _parameters;
+    std::map<ParameterType, Parameter> _parameters;
 };

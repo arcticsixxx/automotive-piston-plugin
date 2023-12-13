@@ -41,9 +41,9 @@ public:
 
 private:
     // Holds maxValue
-    double _maxValue;
+    double _maxValue = 0.0f;
     // Holds minValue
-    double _minValue;
+    double _minValue = 0.0f;
     // Holds value
-    double _value;
+    double _value = 0.0f;
 };

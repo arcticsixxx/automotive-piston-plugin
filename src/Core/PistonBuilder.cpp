@@ -2,8 +2,6 @@
 
 #include "PistonParameters.h"
 
-#include <QDebug>
-
 PistonBuilder::PistonBuilder(std::shared_ptr<PistonParameters> pistonParameters) : 
     _pistonParameters(pistonParameters)
 {

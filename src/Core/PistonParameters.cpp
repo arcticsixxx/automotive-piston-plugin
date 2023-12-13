@@ -1,24 +1,22 @@
 #include "PistonParameters.h"
 
-#include <QDebug>
-
 PistonParameters::PistonParameters()
 {
-    _parameters.insert(ParameterType::PistonHeight,
-        Parameter(55, 50, 65));
-    _parameters.insert(ParameterType::PistonHeadHeight,
-        Parameter(16, 13.75, 17.6));
-    _parameters.insert(ParameterType::PistonBottomDiameter,
-        Parameter(100, 92, 106));
-    _parameters.insert(ParameterType::PistonPinHoleDiameter,
-        Parameter(18, 16, 22));
-    _parameters.insert(ParameterType::RingsCount,
-        Parameter(2, 2, 3)); 
+    _parameters.insert(std::make_pair(ParameterType::PistonHeight,
+        Parameter(55, 50, 65)));
+    _parameters.insert(std::make_pair(ParameterType::PistonHeadHeight,
+        Parameter(16, 13.75, 17.6)));
+    _parameters.insert(std::make_pair(ParameterType::PistonBottomDiameter,
+        Parameter(100, 92, 106)));
+    _parameters.insert(std::make_pair(ParameterType::PistonPinHoleDiameter,
+        Parameter(18, 16, 22)));
+    _parameters.insert(std::make_pair(ParameterType::RingsCount,
+        Parameter(2, 2, 3))); 
 }
 
 double PistonParameters::getValue(ParameterType key) const
 {
-    return _parameters.value(key).getValue();
+    return _parameters.at(key).getValue();
 }
 
 bool PistonParameters::setValue(ParameterType key, double value)
@@ -34,7 +32,7 @@ bool PistonParameters::setValue(ParameterType key, double value)
 
 Parameter PistonParameters::getParameter(ParameterType key) const
 {
-    return _parameters[key];
+    return _parameters.at(key);
 }
 
 void PistonParameters::_updateParametersExtremums(ParameterType key, double value)

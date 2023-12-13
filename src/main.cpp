@@ -2,7 +2,7 @@
 
 #include <QApplication>
 // TODO: не хватает комментариев    +
-// TODO: добавить .gitignore
+// TODO: добавить .gitignore     +
 // TODO: нет тестов
 int main(int argc, char *argv[])
 {

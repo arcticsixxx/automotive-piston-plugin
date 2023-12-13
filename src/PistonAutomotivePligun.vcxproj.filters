@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Core\Parameter.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\PistonBuilder.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\PistonParameters.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Validator.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="KompasAPI\KompasSketch.cpp">
+      <Filter>KompasAPI</Filter>
+    </ClCompile>
+    <ClCompile Include="KompasAPI\KompasWrapper.cpp">
+      <Filter>KompasAPI</Filter>
+    </ClCompile>
+    <ClCompile Include="UI\MainWindow.cpp">
+      <Filter>UI</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Core\Parameter.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\PistonBuilder.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\PistonParameters.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Validator.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="KompasAPI\KompasSketch.h">
+      <Filter>KompasAPI</Filter>
+    </ClInclude>
+    <ClInclude Include="KompasAPI\KompasWrapper.h">
+      <Filter>KompasAPI</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Core">
+      <UniqueIdentifier>{9a303ffb-c460-47fd-9c35-ef571664953f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="KompasAPI">
+      <UniqueIdentifier>{56b3c9e5-4805-423f-935b-51d8bece1f07}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UI">
+      <UniqueIdentifier>{2a6ea0ee-e603-4612-8ea5-bbd593e0107e}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <QtRcc Include="UI\images.qrc">
+      <Filter>UI</Filter>
+    </QtRcc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="UI\MainWindow.h">
+      <Filter>UI</Filter>
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="UI\mainwindow.ui">
+      <Filter>UI</Filter>
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="UI\pistonsketch.png">
+      <Filter>UI</Filter>
+    </Image>
+  </ItemGroup>
+</Project>
