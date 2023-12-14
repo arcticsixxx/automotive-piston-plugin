@@ -1,20 +1,11 @@
 #pragma once
 
 #include "Common/kAPI5.tlh"
-// TODO: не используется + 
-
-// TODO: вынести в отдельный файл +-
-// Я считаю что данный енум следует оставить в KompasSketch.h
-// поскольку, он инкапсулирует информацию о типах линий, которая 
-// используется исключительно в данном классе, похожая ситуация и 
-// с PistonParameters. В качестве компромисса поместил в тело класса.
 
 // This class provides creation of part's sketch
 class KompasSketch
 {
 public:
-	// TODO: добавить комментарий для всех элементов всех классов, перечислений и т.д.
-
 	// Constructor of KompasSketch
 	// @param part: pointer to part for which sketch will be built
 	explicit KompasSketch(Kompas6API5::ksPartPtr part);

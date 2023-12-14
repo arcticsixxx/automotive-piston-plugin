@@ -5,13 +5,13 @@
 #include "Parameter.h"
 
 // Contains parameter type constants
+// TODO: вынести отдельный файл или поместить внутрь класс, если используется только в текущем классе
 enum ParameterType
 {
     PistonHeight = 0,
     PistonHeadHeight,
     PistonBottomDiameter,
     PistonPinHoleDiameter,
-    // TODO: ����������� ���������� ��� ������ ������ + 
     // Depends of engine type
     RingsCount,                  
 };

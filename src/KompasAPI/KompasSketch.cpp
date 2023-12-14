@@ -1,8 +1,6 @@
 #include "KompasSketch.h"
 
 #include "Common/ksConstants3D.tlh"
-// TODO: Не используется include +
-
 KompasSketch::KompasSketch(Kompas6API5::ksPartPtr part) :
     _part(part)
 {
