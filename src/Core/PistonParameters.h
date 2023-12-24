@@ -4,24 +4,9 @@
 
 #include "Parameter.h"
 
-// Contains parameter type constants
-// TODO: вынести отдельный файл или поместить внутрь класс, если используется только в текущем классе
-enum ParameterType
-{
-    PistonHeight = 0,
-    PistonHeadHeight,
-    PistonBottomDiameter,
-    PistonPinHoleDiameter,
-    // Depends of engine type
-    RingsCount,                  
-};
+enum ParameterType;
 
-// Contains material type constants
-enum MaterialType
-{
-    CastIron = 0,
-    Aluminum,
-};
+//// TODO: вынести отдельный файл или поместить внутрь класс, если используется только в текущем классе +
 
 // Holds collection of piston parameters
 class PistonParameters

@@ -28,7 +28,8 @@ public:
 	// @param bottomDiameter: bottom diameter of piston
 	// @param pistonHeadHeight: height of piston's head
 	// @param ringsCount: quantity of rings ( depends of engine type)
-	void buildBody(double bodyHeight, double bottomDiameter, double pistonHeadHeight, int ringsCount = 2);
+	void buildBody(double bodyHeight, double bottomDiameter, double pistonHeadHeight, 
+		double ringHeight, double ringWidth, int ringsCount = 2);
 
 	// Extrudes pin hole on part
 	// @param bodyHeight: height of piston's body

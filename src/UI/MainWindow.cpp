@@ -6,6 +6,7 @@
 #include <QMessageBox>
 
 #include "Core/PistonParameters.h"
+#include "Core/ParameterType.h"
 #include "Core/PistonBuilder.h"
 #include "Core/Validator.h"
 
@@ -116,6 +117,40 @@ void MainWindow::_setupConnections()
 
         _setupTooltip(ui->diametePinHoleLineEdit, ParameterType::PistonPinHoleDiameter,
             QString::fromLocal8Bit("Этот параметр содержит данные об отверстии для порневого пальца."));
+    });
+
+    connect(ui->heightRingLineEdit, &QLineEdit::textEdited, this,
+    [this](const QString& text)
+    {
+        if (_pistonParameters->setValue(ParameterType::RingHeight,
+        ui->heightRingLineEdit->text().toDouble()))
+        {
+            ui->heightRingLineEdit->setStyleSheet(_uiColor.noErrorColor);
+        }
+        else
+        {
+            ui->heightRingLineEdit->setStyleSheet(_uiColor.errorColor);
+        }
+
+        _setupTooltip(ui->heightRingLineEdit, ParameterType::RingHeight,
+            QString::fromLocal8Bit("Этот параметр содержит данные о высоте маслосъемного кольца."));
+    });
+
+    connect(ui->widthRingLineEdit, &QLineEdit::textEdited, this,
+    [this](const QString& text)
+    {
+        if (_pistonParameters->setValue(ParameterType::RingWidth,
+        ui->widthRingLineEdit->text().toDouble()))
+        {
+            ui->widthRingLineEdit->setStyleSheet(_uiColor.noErrorColor);
+        }
+        else
+        {
+            ui->widthRingLineEdit->setStyleSheet(_uiColor.errorColor);
+        }
+
+        _setupTooltip(ui->widthRingLineEdit, ParameterType::RingWidth,
+            QString::fromLocal8Bit("Этот параметр содержит данные о ширине маслосъемного кольца."));
     });
 
     const QList<QLineEdit*> lineEdits = ui->centralwidget->findChildren<QLineEdit*>();

@@ -24,8 +24,11 @@ public:
 	// @param bodyHeight: height of piston's body
 	// @param bodyWidth: bottom diameter of piston
 	// @param pistonHeadHeight: height of piston's head
+	// @param ringhHeight: height of ring
+	// @param ringWidth: width of ring
 	// @param ringsCount: quantity of rings ( depends of engine type)
-	void drawBody(double bodyHeight, double bodyWidth, double pistonHeadHeight, int ringsCount = 2);
+	void drawBody(double bodyHeight, double bodyWidth, double pistonHeadHeight, 
+		double ringHeight, double ringWidth, int ringsCount = 2);
 	
 	// Draws pin hole of piston on sketch 
 	// @param bodyHeight: height of piston's body
@@ -49,8 +52,11 @@ private:
 	// @param x: current position of polyline by x
 	// @param y: current position of polyline by y
 	// @param pistonHeadHeight: height of piston's head
+	// @param ringhHeight: height of ring
+	// @param ringWidth: width of ring
 	// @param ringsCount: quantity of rings ( depends of engine type)
-	void _drawRings(double& x, double& y, double pistonHeadHeight, int ringsCount = 2);
+	void _drawRings(double& x, double& y, double pistonHeadHeight, 
+		double ringHeight, double ringWidth, int ringsCount = 2);
 
 private:
 	// Interface of sketch entity

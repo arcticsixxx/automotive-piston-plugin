@@ -43,6 +43,9 @@
     <ClInclude Include="KompasAPI\KompasWrapper.h">
       <Filter>KompasAPI</Filter>
     </ClInclude>
+    <ClInclude Include="Core\ParameterType.h">
+      <Filter>Core</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Core">

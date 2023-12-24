@@ -1,4 +1,5 @@
 #include "PistonParameters.h"
+#include "ParameterType.h"
 
 PistonParameters::PistonParameters()
 {
@@ -12,6 +13,10 @@ PistonParameters::PistonParameters()
         Parameter(18, 16, 22)));
     _parameters.insert(std::make_pair(ParameterType::RingsCount,
         Parameter(2, 2, 3))); 
+    _parameters.insert(std::make_pair(ParameterType::RingHeight,
+        Parameter(2, 1, 3)));
+    _parameters.insert(std::make_pair(ParameterType::RingWidth,
+        Parameter(1, 0.8, 2.5)));
 }
 
 double PistonParameters::getValue(ParameterType key) const

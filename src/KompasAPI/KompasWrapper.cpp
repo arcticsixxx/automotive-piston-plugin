@@ -58,7 +58,8 @@ void KompasWrapper::createDocument()
 	_document3D = _kompasObject->ActiveDocument3D();
 }
 
-void KompasWrapper::buildBody(double bodyHeight, double bottomDiameter, double pistonHeadHeight, int ringsCount)
+void KompasWrapper::buildBody(double bodyHeight, double bottomDiameter, double pistonHeadHeight, 
+	double ringHeight, double ringWidth, int ringsCount)
 {
 	_createPart();
 
@@ -69,7 +70,7 @@ void KompasWrapper::buildBody(double bodyHeight, double bottomDiameter, double p
 	}
 
 	_kompasSketch = std::shared_ptr<KompasSketch>(new KompasSketch(_kompasPart));
-	_kompasSketch->drawBody(bodyHeight, bottomDiameter, pistonHeadHeight, ringsCount);
+	_kompasSketch->drawBody(bodyHeight, bottomDiameter, pistonHeadHeight, ringHeight, ringWidth, ringsCount);
 
 	_rotateEntity();
 }

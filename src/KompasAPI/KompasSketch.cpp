@@ -17,10 +17,11 @@ void KompasSketch::_createSketch()
     _sketchEntity->Create();
 }
 
-void KompasSketch::_drawRings(double& x, double& y, double pistonHeadHeight, int ringsCount)
+void KompasSketch::_drawRings(double& x, double& y, double pistonHeadHeight, 
+	double ringHeight, double ringWidth, int ringsCount)
 {
-	constexpr double ringDepth = 1;
-	constexpr double ringHeigth = 2;
+	/*constexpr double ringDepth = 1;
+	constexpr double ringHeigth = 2;*/
 
 	if (ringsCount == 2) pistonHeadHeight -= 8;
 	if (ringsCount == 3) pistonHeadHeight -= 12;
@@ -31,15 +32,16 @@ void KompasSketch::_drawRings(double& x, double& y, double pistonHeadHeight, int
 	for (int i = 0; i < ringsCount; ++i)
 	{
 		_document2D->ksPoint(x, y, LineType::Auxillary);
-		_document2D->ksPoint(x, y + ringHeigth, LineType::Auxillary);
-		_document2D->ksPoint(x + ringDepth, y + ringHeigth, LineType::Auxillary);
-		_document2D->ksPoint(x + ringDepth, y + (2 * ringHeigth), LineType::Auxillary);
+		_document2D->ksPoint(x, y + ringHeight, LineType::Auxillary);
+		_document2D->ksPoint(x + ringWidth, y + ringHeight, LineType::Auxillary);
+		_document2D->ksPoint(x + ringWidth, y + (2 * ringHeight), LineType::Auxillary);
 
-		y += 2 * ringHeigth;
+		y += 2 * ringHeight;
 	}
 }
 
-void KompasSketch::drawBody(double bodyHeight, double bodyWidth, double pistonHeadHeight, int ringsCount)
+void KompasSketch::drawBody(double bodyHeight, double bodyWidth, double pistonHeadHeight, 
+	double ringHeight, double ringWidth, int ringsCount)
 {
 	bodyHeight = (-1) * bodyHeight;
 	bodyWidth = (-1) * (bodyWidth / 2);
@@ -54,7 +56,8 @@ void KompasSketch::drawBody(double bodyHeight, double bodyWidth, double pistonHe
 	
 	_document2D->ksPoint(0, bodyHeight, LineType::Main);
 	_document2D->ksPoint(bodyWidth, bodyHeight, LineType::Main);
-	_drawRings(bodyWidth, bodyHeight, pistonHeadHeight, ringsCount);
+	_drawRings(bodyWidth, bodyHeight, pistonHeadHeight, ringHeight,
+		ringWidth, ringsCount);
 
 	// remaining part of piston
 	_document2D->ksPoint(bodyWidth, bodyHeight, LineType::Main);

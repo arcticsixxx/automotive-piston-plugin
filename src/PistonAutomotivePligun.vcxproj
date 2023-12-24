@@ -110,6 +110,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Core\Parameter.h" />
+    <ClInclude Include="Core\ParameterType.h" />
     <ClInclude Include="Core\PistonBuilder.h" />
     <ClInclude Include="Core\PistonParameters.h" />
     <ClInclude Include="Core\Validator.h" />
