@@ -20,9 +20,6 @@ void KompasSketch::_createSketch()
 void KompasSketch::_drawRings(double& x, double& y, double pistonHeadHeight, 
 	double ringHeight, double ringWidth, int ringsCount)
 {
-	/*constexpr double ringDepth = 1;
-	constexpr double ringHeigth = 2;*/
-
 	if (ringsCount == 2) pistonHeadHeight -= 8;
 	if (ringsCount == 3) pistonHeadHeight -= 12;
 
